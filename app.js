@@ -42,6 +42,8 @@ app.use(function(req,res,next){
     next();
 });
 
+app.use( express.static(path.join(__dirname, './reactclient/build/upload')));
+
 const staticFiles = express.static(path.join(__dirname, './reactclient/build'))
 app.use(staticFiles);
 
