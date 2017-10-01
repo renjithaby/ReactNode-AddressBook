@@ -1,0 +1,14 @@
+.contact-item{
+    cursor : pointer;
+}
+
+.contact-item .name {
+    color: deepskyblue;
+    margin-left:2em;
+}
+
+.contact-item  img{
+    width:5em;
+    height:5em;
+
+}

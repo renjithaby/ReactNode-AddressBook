@@ -1,0 +1,67 @@
+.header{
+    background-color: white;
+    border-bottom : 1px solid deepskyblue;
+    margin-bottom: 2em;
+}
+.header ul li{
+
+}
+.header ul a{
+    color:deepskyblue;
+}
+
+.header .pull-xs-right{
+    float :right;
+}
+
+.header .pull-xs-left{
+    float :left;
+}
+
+.header .form-block {
+    max-width :80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.header .navbar{
+    border : none;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-bottom: 0em;
+    border-left: 1px solid deepskyblue;
+}
+.header .nav .active {
+    background-color: #eee;
+    color:deepskyblue;
+    border-left: 1px solid deepskyblue;
+    border-right: 1px solid deepskyblue;
+}
+
+@media (min-width: 768px){
+    .header ul li {
+        padding-left: 0em;
+        margin-left:1em;
+    }
+}
+
+@media (max-width: 768px){
+
+    .header ul li {
+        padding-left: 0em;
+        margin-bottom:1em;
+    }
+    .header .pull-xs-right{
+        float :none;
+    }
+
+    .header .pull-xs-left{
+        float :none;
+    }
+
+    .header .nav .active{
+        border:none;
+        border-bottom: 1px solid deepskyblue;
+        border-left: 1px solid deepskyblue;
+    }
+}

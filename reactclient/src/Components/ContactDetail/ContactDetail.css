@@ -1,0 +1,33 @@
+.contact-detail hr {
+    border-top: 1px solid deepskyblue;
+}
+
+.contact-detail .title{
+    color:deepskyblue;
+}
+.contact-detail .field{
+     margin-bottom:2em;
+ }
+
+.contact-detail .btn-green{
+     min-width:5em;
+ }
+
+.contact-detail .btns{
+    display:block;
+    margin : 0 auto;
+    text-align: center;
+}
+
+.contact-detail .btn-edit{
+   margin-right:1em;
+}
+
+.contact-detail .btn-delete{
+    margin-left:1em;
+}
+
+.contact-detail .image-block img{
+    display: block;
+    margin: 0 auto;
+}
