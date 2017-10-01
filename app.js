@@ -34,7 +34,7 @@ app.use(cookieParser());
 
 
 
-app.use("/public",express.static(path.join(__dirname, 'public')));
+//app.use("/static",express.static(path.join(__dirname, 'public')));
 
 // Make our db accessible to our router
 app.use(function(req,res,next){
