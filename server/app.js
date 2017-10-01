@@ -11,9 +11,10 @@ var user = require('./routes/user');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('127.0.0.1:27017/nodetest1');
+//var db = monk('127.0.0.1:27017/nodetest1'); //local
+var db = monk('mongodb://heroku_k13z4wnw:2n3lm2c6s9nbstgfd5q6eippfi@ds155674.mlab.com:55674/heroku_k13z4wnw');
+
 var jwt    = require('jsonwebtoken');
-//var db = monk('mongodb://heroku_f0w8v6j0:iogo6jcun3fupmhlk0sfj1q2np@ds121014.mlab.com:21014/heroku_f0w8v6j0');
 
 var app = express();
 
@@ -23,8 +24,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.set('superSecret', "godslove");
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -5,7 +5,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './EditContact.css';
-export const apiHost = "http://localhost:3000/";
+export const apiHost = "https://desolate-waters-54209.herokuapp.com/";//http://localhost:3000/";
 export const MAX_FILE_SIZE = 2000; //bytes
 class EditContactPage extends React.Component {
 

@@ -2,7 +2,7 @@
  * Created by rabby on 26/09/2017.
  */
 
-export const apiHost = "http://localhost:3000/";
+export const apiHost = "https://desolate-waters-54209.herokuapp.com/";//"http://localhost:3000/";
 class dataApi {
     constructor() {
 
