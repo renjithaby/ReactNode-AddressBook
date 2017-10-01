@@ -7,7 +7,7 @@ var multer = require('multer');
 //multer storage
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './public/uploads')
+        cb(null, './reactclient/build/uploads') //./public/uploads
     },
     filename: function (req, file, cb) {
         if(file) {
@@ -71,7 +71,7 @@ router.post('/addcontact',function (req, res) {
         newContact.address = req.body.address;
         newContact.email = req.body.email;
         newContact.mobile = req.body.mobile;
-        newContact.profilePicUrl = req.file ? req.file.path.replace("public","") : "uploads/default.png";
+        newContact.profilePicUrl = req.file ? req.file.path.replace("reactclient/build/","") : "uploads/default.png";
 
         // Set our collection
          var collection = db.get('usercollection');
@@ -130,7 +130,7 @@ router.post('/updatecontact', function (req, res) {
     newContact.email = req.body.email;
     newContact.mobile = req.body.mobile;
         if(req.file){
-            newContact.profilePicUrl = req.file.path.replace("public/","")
+            newContact.profilePicUrl = req.file.path.replace("reactclient/build/","")
         }else if(req.body.profilePicUrl){
             newContact.profilePicUrl =  req.body.profilePicUrl;
         }else{
