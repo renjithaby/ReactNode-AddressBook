@@ -47,6 +47,13 @@ app.use('/uploads',express.static(path.join(__dirname, './public/uploads')));
 const staticFiles = express.static(path.join(__dirname, './reactclient/build'));
 app.use(staticFiles);
 
+app.use('/home',express.static(path.join(__dirname, './public/uploads')));
+app.use('/signin',express.static(path.join(__dirname, './public/uploads')));
+app.use('/signup',express.static(path.join(__dirname, './public/uploads')));
+app.use('/addcontact',express.static(path.join(__dirname, './public/uploads')));
+app.use('/editcontact',express.static(path.join(__dirname, './public/uploads')));
+app.use('/contact',express.static(path.join(__dirname, './public/uploads')));
+
 
 app.use('/', index);
 // route middleware to verify a token
