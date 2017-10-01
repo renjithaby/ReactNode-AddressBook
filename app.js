@@ -42,10 +42,10 @@ app.use(function(req,res,next){
     next();
 });
 
-app.use( express.static(path.join(__dirname, './reactclient/build/upload')));
+app.use('/uploads',express.static(path.join(__dirname, './reactclient/build/uploads')));
 
-//const staticFiles = express.static(path.join(__dirname, './reactclient/build'))
-//app.use(staticFiles);
+const staticFiles = express.static(path.join(__dirname, './reactclient/build'))
+app.use(staticFiles);
 
 
 
