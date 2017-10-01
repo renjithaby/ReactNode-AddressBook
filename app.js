@@ -44,9 +44,8 @@ app.use(function(req,res,next){
 
 app.use('/img',express.static(path.join(__dirname, './public/uploads')));
 
-/*const staticFiles = express.static(path.join(__dirname, './reactclient/build'))
+const staticFiles = express.static(path.join(__dirname, './reactclient/build'))
 app.use(staticFiles);
-*/
 
 
 app.use('/', index);
