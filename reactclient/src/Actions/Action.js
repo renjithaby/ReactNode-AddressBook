@@ -1,5 +1,6 @@
 /**
  * Created by rabby on 26/09/2017.
+ * The module which register the actions , that handles the required tasks and notify the reducers the result.
  */
 
 import dataApi from '../Api/dataApi';

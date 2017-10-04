@@ -1,3 +1,8 @@
+
+/**
+ * Created by rabby on 26/09/2017.
+ * The main container Component which takes data fro UserData reducer, and handles the routing of the application.
+ */
 import React, { Component } from 'react';
 import './App.css';
 import Header from './Components/Header/Header';

@@ -1,5 +1,6 @@
 /**
  * Created by rabby on 26/09/2017.
+ * The data reducer which manages the data for the entire application, through actions
  */
 import history from '../History';
 

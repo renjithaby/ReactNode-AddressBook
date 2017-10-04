@@ -1,5 +1,6 @@
 /**
  * Created by rabby on 26/09/2017.
+ * Component that handles the user Signupform, with base validator
  */
 
 import React from 'react';
@@ -12,9 +13,9 @@ import './SignUp.css';
         this.state = {username :"",
             password :"",
             email :"",
-            usernameValid :{message:"minimum 6 characters required",status:""},
+            usernameValid :{message:"minimum 3 characters required",status:""},
             emailValid:{message:"please enter a valid email",status:""},
-            passwordValid:{message:"minimum 6 character required",status:""},
+            passwordValid:{message:"minimum 3 character required",status:""},
             formValid :false
         };
     }
@@ -42,7 +43,6 @@ import './SignUp.css';
          //name
          //min 6 characters
          if(this.state.username.length<6){
-            // let obj = {...this.state.usernameValid , status: false}
              this.setState({usernameValid:{...this.state.usernameValid , status: false}});
              formValid = false;
          }else{
@@ -50,7 +50,7 @@ import './SignUp.css';
          }
 
          //address
-         //min  6 characters
+         //min  3 characters
          if(this.state.password.length<6){
 
              this.setState({passwordValid:{...this.state.passwordValid , status: false}});

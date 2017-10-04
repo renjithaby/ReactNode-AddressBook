@@ -1,5 +1,7 @@
 /**
  * Created by rabby on 26/09/2017.
+ * The Header component which renders, LoggedIn and Loggedout views
+ * depending on whether there is a valid user id in the userData
  */
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -58,14 +60,6 @@ class Header extends React.Component {
         super(props);
     }
 
-    componentWillMount(){
-
-    }
-
-    componentWillReceiveProps(nextprops){
-
-    }
-
 
     handleLogout(){
         this.props.handleLogout();
@@ -112,5 +106,4 @@ class Header extends React.Component {
 }
 
 
-/*  <!--  <img src={logo} className="App-logo" alt="logo" /> --> */
 export default Header;

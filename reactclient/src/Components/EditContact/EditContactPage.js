@@ -1,12 +1,15 @@
 /**
  * Created by rabby on 28/09/17.
+ * Component that handles the editing a contact form with a basic validator, and
+ * checks to findout whether the form is dirty( means any new chnages)
  */
 
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './EditContact.css';
-export const apiHost = "https://desolate-waters-54209.herokuapp.com/";//http://localhost:3000/";
-export const MAX_FILE_SIZE = 2000; //bytes
+export const apiHost = "https://desolate-waters-54209.herokuapp.com/";
+export const max_file_size = 2000; //bytes
+
 class EditContactPage extends React.Component {
 
     constructor(props) {
@@ -156,14 +159,14 @@ class EditContactPage extends React.Component {
                 uploadedImage:file.name
             },this.validator);
         }
-        if(file && file.size>MAX_FILE_SIZE){
+        if(file && file.size>max_file_size){
             file = null;
             reader =null;
             this.setState({
                 file: "",
                 imagePreviewUrl:"",
                 uploadedImage:"",
-                fileUploadErrorMessage : " max file size limit is " + MAX_FILE_SIZE+"bytes"
+                fileUploadErrorMessage : " max file size limit is " + max_file_size+"bytes"
             },this.validator);
         }
         if(file) {

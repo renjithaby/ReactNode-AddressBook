@@ -1,5 +1,6 @@
 /**
  * Created by rabby on 26/09/2017.
+ * Component that handles the User Signin form
  */
 
 import React from 'react';

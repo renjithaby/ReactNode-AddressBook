@@ -1,5 +1,7 @@
 /**
  * Created by rabby on 26/09/2017.
+ * Component that displays the home Page to show the user contact lists,
+ * with a search feature based on contacts name
  */
 
 import React from 'react';
@@ -17,7 +19,9 @@ class HomePage extends React.Component {
         this.filterContacts();
     }
 
-
+    /**
+     * Handles the filtering of the contacts based on the contact name.
+     */
     filterContacts(){
         let expression = "^"+this.state.search+".*$";
         let searchReg = new RegExp(expression);

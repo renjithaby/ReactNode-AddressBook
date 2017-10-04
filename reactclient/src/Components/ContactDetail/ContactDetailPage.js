@@ -1,11 +1,13 @@
 /**
  * Created by rabby on 27/09/17.
+ * Component that handles the display of a Contact Detail
  */
 
 import './ContactDetail.css';
 import React from 'react';
 import history from '../../History';
-export const apiHost =  "https://desolate-waters-54209.herokuapp.com/";//"http://localhost:3000/";
+export const apiHost =  "https://desolate-waters-54209.herokuapp.com/";
+
 class ContactDetailPage extends React.Component {
 
     constructor(props){
@@ -14,6 +16,7 @@ class ContactDetailPage extends React.Component {
     }
 
     componentWillMount(props){
+        //get the contact from the list and set the state
         if(this.props.user.contacts) {
             let contact = this.props.user.contacts.find(o => o.id == this.props.match.params.id);
             this.setState({contact: contact});
@@ -24,10 +27,16 @@ class ContactDetailPage extends React.Component {
 
     }
 
+    /*
+     * Functions directs the user to the editcontact page with contact id as parameter
+     */
     handleEditContact(e){
         history.push('/editContact/'+ this.state.contact.id );
     }
 
+    /*
+     * Function which calls the container prop deleteContact to delete a contact.
+     */
     handleDeleteContact(e){
         this.props.deleteContact({userId: this.props.user._id, contactId: this.state.contact.id});
     }

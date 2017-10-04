@@ -1,5 +1,6 @@
 /**
  * Created by rabby on 27/09/17.
+ * View component for the single contact Item
  */
 
 import React from 'react';

@@ -1,5 +1,6 @@
 /**
  * Created by rabby on 26/09/2017.
+ * DataApi handles the fetch request  to the backend server up on the request from the action and return the response.
  */
 
 export const apiHost = "https://desolate-waters-54209.herokuapp.com/";//"http://localhost:3000/";
