@@ -169,7 +169,7 @@ class AddContactPage extends React.Component {
                     </div>
 
                     <div className={!this.state.mobileValid.status?"form-group has-error":"form-group"}>
-                        <label> mobile </label>{!this.state.mobilValid.status?this.state.mobileValid.message:""}
+                        <label> mobile </label>{!this.state.mobileValid.status?this.state.mobileValid.message:""}
                         <input className="form-control"  value = {this.state.mobile} onChange = {this.handleMobileChange.bind(this)}/>
                     </div>
 
