@@ -156,20 +156,20 @@ class AddContactPage extends React.Component {
                 </div>
                 <form  onSubmit = {this.addNewContact.bind(this)} >
                     <div className={!this.state.nameValid.status?"form-group has-error":"form-group"}>
-                        <label> name </label> {!this.state.nameValid.status?this.state.nameValid.message:""}
+                        <label> name : </label> <span> {!this.state.nameValid.status?this.state.nameValid.message:""} </span>
                         <input className="form-control"  value = {this.state.name} onChange = {this.handleNameChange.bind(this)}/>
                     </div>
                     <div className={!this.state.addressValid.status?"form-group has-error":"form-group"}>
-                        <label> address </label> {!this.state.addressValid.status?this.state.addressValid.message:""}
+                        <label> address : </label> <span>{!this.state.addressValid.status?this.state.addressValid.message:""} </span>
                         <textarea className="form-control"  value = {this.state.address} onChange = {this.handleAddressChange.bind(this)}/>
                     </div>
                     <div className={!this.state.emailValid.status?"form-group has-error":"form-group"}>
-                        <label> email </label>{!this.state.emailValid.status?this.state.emailValid.message:""}
+                        <label> email : </label> <span>{!this.state.emailValid.status?this.state.emailValid.message:""} </span>
                         <input className="form-control" type= "email" value = {this.state.email} onChange = {this.handleEmailChange.bind(this)}/>
                     </div>
 
                     <div className={!this.state.mobileValid.status?"form-group has-error":"form-group"}>
-                        <label> mobile </label>{!this.state.mobileValid.status?this.state.mobileValid.message:""}
+                        <label> mobile  : </label> <span> {!this.state.mobileValid.status?this.state.mobileValid.message:""} </span>
                         <input className="form-control"  value = {this.state.mobile} onChange = {this.handleMobileChange.bind(this)}/>
                     </div>
 

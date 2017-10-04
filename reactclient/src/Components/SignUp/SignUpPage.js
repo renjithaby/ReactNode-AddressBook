@@ -88,17 +88,17 @@ import './SignUp.css';
             <div className =" signup form-block container">
                 <form  onSubmit = {this.handleRegister.bind(this)}>
                     <div className={!this.state.usernameValid.status?"form-group has-error":"form-group"}>
-                        <label> User Name : </label> {!this.state.usernameValid.status?this.state.usernameValid.message:""}
+                        <label> User Name : </label> <span>{!this.state.usernameValid.status?this.state.usernameValid.message:""} </span>
                         <input className="form-control"  value={this.state.username} onChange={this.handleUserNameChange.bind(this)}/>
                     </div>
 
                     <div className= {!this.state.emailValid.status?"form-group has-error":"form-group"}>
-                        <label> User Email : </label> {!this.state.emailValid.status?this.state.emailValid.message:""}
+                        <label> User Email : </label> <span>{!this.state.emailValid.status?this.state.emailValid.message:""}</span>
                         <input className="form-control"  type = "email" value={this.state.email} onChange={this.handleUserEmailChange.bind(this)}/>
                     </div>
 
                     <div className={!this.state.passwordValid.status?"form-group has-error":"form-group"}>
-                        <label> Password : </label>{!this.state.passwordValid.status?this.state.passwordValid.message:""}
+                        <label> Password : </label> <span>{!this.state.passwordValid.status?this.state.passwordValid.message:""}</span>
                         <input className="form-control" type="password" value={this.state.password} onChange={this.handlePasswordChange.bind(this)}/>
                     </div>
 

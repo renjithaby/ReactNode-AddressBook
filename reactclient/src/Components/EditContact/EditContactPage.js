@@ -21,10 +21,10 @@ class EditContactPage extends React.Component {
             imagePreviewUrl: "",
             fileUploadErrorMessage: "",
             uploadedImage: "",
-            nameValid: "default",
-            addressValid: "default",
-            emailValid: "default",
-            mobileValid: "default",
+            nameValid :{message:"minimum 3 characters required",status:"default"},
+            addressValid:{message:"minimum 6 characters required",status:"default"},
+            emailValid :{message:"please enter a valid email",status:"default"},
+            mobileValid:{message:"please enter a valid mobile number, min 6 digits",status:"default"},
             formValid: false,
             isDirty:false
         };
@@ -74,42 +74,42 @@ class EditContactPage extends React.Component {
         let emailReg = new RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
         //name
         //min 6 characters
-        if(this.state.contact.name.length<6){
+        if(this.state.contact.name.length<3){
 
-            this.setState({nameValid: false});
+            this.setState({nameValid:{...this.state.nameValid , status: false}});
             formValid = false;
         }else{
-            this.setState({nameValid: true});
+            this.setState({nameValid:{...this.state.nameValid , status: true}});
         }
 
         //address
         //min  6 characters
         if(this.state.contact.address.length<6){
 
-            this.setState({addressValid: false});
+            this.setState({addressValid:{...this.state.addressValid , status: false}});
             formValid = false;
         }else{
-            this.setState({addressValid: true});
+            this.setState({addressValid:{...this.state.addressValid , status: true}});
         }
 
         //email
         if(!emailReg.test(this.state.contact.email)){
-            this.setState({emailValid: false});
+            this.setState({emailValid:{...this.state.emailValid , status: false}});
             formValid = false;
         }else{
-            this.setState({emailValid: true});
+            this.setState({emailValid:{...this.state.emailValid , status: true}});
         }
 
         //mobile
         //min 6 characters
         if(this.state.contact.mobile.length<6) {
-            this.setState({mobileValid: false});
+            this.setState({mobileValid:{...this.state.mobileValid , status: false}});
             formValid = false;
         }else if(!mobileReg.test(this.state.contact.mobile)) {
-            this.setState({mobileValid: false});
+            this.setState({mobileValid:{...this.state.mobileValid , status: false}});
             formValid = false;
         }else{
-            this.setState({mobileValid: true});
+            this.setState({mobileValid:{...this.state.mobileValid , status: true}});
         }
 
         this.setState({formValid :formValid},this.isDirty);
@@ -200,20 +200,20 @@ class EditContactPage extends React.Component {
                 </div>
                 <form  onSubmit = {this.updateContact.bind(this)} >
                     <div className={!this.state.nameValid?"form-group has-error":"form-group"}>
-                        <label> name </label>
+                        <label> name : </label> <span> {!this.state.nameValid.status?this.state.nameValid.message:""} </span>
                         <input className="form-control"  value = {this.state.contact.name} onChange = {this.handleNameChange.bind(this)}/>
                     </div>
                     <div className={!this.state.addressValid?"form-group has-error":"form-group"}>
-                        <label> address </label>
+                        <label> address : </label> <span> {!this.state.addressValid.status?this.state.addressValid.message:""} </span>
                         <textarea className="form-control"  value = {this.state.contact.address} onChange = {this.handleAddressChange.bind(this)}/>
                     </div>
                     <div className={!this.state.emailValid?"form-group has-error":"form-group"}>
-                        <label> email </label>
+                        <label> email : </label> <span> {!this.state.emailValid.status?this.state.emailValid.message:""} </span>
                         <input className="form-control" type= "email" value = {this.state.contact.email} onChange = {this.handleEmailChange.bind(this)}/>
                     </div>
 
                     <div className={!this.state.mobileValid?"form-group has-error":"form-group"}>
-                        <label> mobile </label>
+                        <label> mobile : </label> <span> {!this.state.mobileValid.status?this.state.mobileValid.message:""} </span>
                         <input className="form-control"  value = {this.state.contact.mobile} onChange = {this.handleMobileChange.bind(this)}/>
                     </div>
 
