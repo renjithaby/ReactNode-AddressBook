@@ -13,9 +13,9 @@ import './SignUp.css';
         this.state = {username :"",
             password :"",
             email :"",
-            usernameValid :{message:"minimum 3 characters required",status:""},
-            emailValid:{message:"please enter a valid email",status:""},
-            passwordValid:{message:"minimum 3 character required",status:""},
+            usernameValid :{message:"minimum 3 characters required",status:"default"},
+            emailValid:{message:"please enter a valid email",status:"default"},
+            passwordValid:{message:"minimum 3 character required",status:"default"},
             formValid :false
         };
     }
@@ -41,17 +41,17 @@ import './SignUp.css';
 
          let emailReg = new RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
          //name
-         //min 6 characters
-         if(this.state.username.length<6){
+         //min 3 characters
+         if(this.state.username.length<3){
              this.setState({usernameValid:{...this.state.usernameValid , status: false}});
              formValid = false;
          }else{
              this.setState({usernameValid:{...this.state.usernameValid , status: true}});
          }
 
-         //address
+         //password
          //min  3 characters
-         if(this.state.password.length<6){
+         if(this.state.password.length<3){
 
              this.setState({passwordValid:{...this.state.passwordValid , status: false}});
              formValid = false;

@@ -10,8 +10,8 @@ var user = require('./routes/user');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-//var db = monk('127.0.0.1:27017/nodetest1'); //local
-var db = monk('mongodb://heroku_k13z4wnw:2n3lm2c6s9nbstgfd5q6eippfi@ds155674.mlab.com:55674/heroku_k13z4wnw');
+var db = monk('127.0.0.1:27017/nodetest1'); //local
+//var db = monk('mongodb://heroku_k13z4wnw:2n3lm2c6s9nbstgfd5q6eippfi@ds155674.mlab.com:55674/heroku_k13z4wnw');
 
 var jwt    = require('jsonwebtoken');
 

@@ -3,7 +3,7 @@
  * DataApi handles the fetch request  to the backend server up on the request from the action and return the response.
  */
 
-export const apiHost = "https://desolate-waters-54209.herokuapp.com/";//"http://localhost:3000/";
+export const apiHost = "http://localhost:3000/";//"https://desolate-waters-54209.herokuapp.com/";//"http://localhost:3000/";
 class dataApi {
     constructor() {
 

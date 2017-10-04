@@ -6,7 +6,7 @@
 import React from 'react';
 import history from '../../History';
 import './ContactItem.css';
-export const apiHost = "https://desolate-waters-54209.herokuapp.com/";//http://localhost:3000/";
+export const apiHost = "http://localhost:3000/";// "https://desolate-waters-54209.herokuapp.com/";
 
 
 class ContactItem extends React.Component {

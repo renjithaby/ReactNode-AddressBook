@@ -6,7 +6,7 @@
 import './ContactDetail.css';
 import React from 'react';
 import history from '../../History';
-export const apiHost =  "https://desolate-waters-54209.herokuapp.com/";
+export const apiHost = "http://localhost:3000/";// "https://desolate-waters-54209.herokuapp.com/";
 
 class ContactDetailPage extends React.Component {
 
