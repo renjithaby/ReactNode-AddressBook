@@ -34,40 +34,40 @@ class AddContactPage extends React.Component {
         //min 3 characters
         if(this.state.name.length<3){
 
-            this.setState({nameValid:{...this.state.nameValid , status: false});
+            this.setState({nameValid:{...this.state.nameValid , status: false}});
             formValid = false;
         }else{
-            this.setState({nameValid:{...this.state.nameValid , status: true});
+            this.setState({nameValid:{...this.state.nameValid , status: true}});
         }
 
         //address
         //min  6 characters
         if(this.state.address.length<6){
 
-            this.setState({addressValid:{...this.state.addressValid , status: false});
+            this.setState({addressValid:{...this.state.addressValid , status: false}});
             formValid = false;
         }else{
-            this.setState({addressValid:{...this.state.addressValid , status: true});
+            this.setState({addressValid:{...this.state.addressValid , status: true}});
         }
 
         //email
         if(!emailReg.test(this.state.email)){
-            this.setState({emailValid:{...this.state.emailValid , status: false});
+            this.setState({emailValid:{...this.state.emailValid , status: false}});
             formValid = false;
         }else{
-            this.setState({emailValid:{...this.state.emailValid , status: true});
+            this.setState({emailValid:{...this.state.emailValid , status: true}});
         }
 
         //mobile
         //min 6 characters
         if(this.state.mobile.length<6) {
-            this.setState({mobileValid:{...this.state.mobileValid , status: false});
+            this.setState({mobileValid:{...this.state.mobileValid , status: false}});
             formValid = false;
         }else if(!mobileReg.test(this.state.mobile)) {
-            this.setState({mobileValid:{...this.state.mobileValid , status: false});
+            this.setState({mobileValid:{...this.state.mobileValid , status: false}});
             formValid = false;
         }else{
-            this.setState({mobileValid:{...this.state.mobileValid , status: true});
+            this.setState({mobileValid:{...this.state.mobileValid , status: true}});
         }
 
         this.setState({formValid :formValid});
