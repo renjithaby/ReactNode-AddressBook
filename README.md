@@ -1,5 +1,7 @@
-# ReactNode-AddressBook. please check live demo at: https://desolate-waters-54209.herokuapp.com/
+# ReactNode-AddressBook. 
  A simple address book application made of React-Redux in the client side and NodeJs-MongoDb  in the server.
+ Please check live demo at: https://desolate-waters-54209.herokuapp.com/ 
+ 
  Key Features:
  1) User Authentication,
  2) Sign Up and create your own personal contact list and upload a profile pic for each contact.
