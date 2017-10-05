@@ -25,22 +25,34 @@ router.post('/adduser', function (req, res) {
     // Set our collection
     var collection = db.get('usercollection');
 
-    // Submit to the DB
-    collection.insert({
-        "username": userName,
-        "password": userPassword,
-        "email": userEmail,
-        "contacts":[]
-    }, function (err, doc) {
-        if (err) {
-            // If it failed, return error
-            res.send({result:"failed",message:"There was a problem adding the information to the database."});
+    collection.find({
+        "username": userName
+    }, function(err, user) {
+
+        if (err) throw err;
+
+        if (user[0]) {
+            res.send({result: "failed", message: 'Username already taken, please try again.'});
+        }else {
+            collection.insert({
+                "username": userName,
+                "password": userPassword,
+                "email": userEmail,
+                "contacts":[]
+            }, function (err, doc) {
+                if (err) {
+                    // If it failed, return error
+                    res.send({result:"failed",message:"There was a problem adding the information to the database."});
+                }
+                else {
+                    // And forward to success page
+                    res.send({result: "success"});
+                }
+            });
         }
-        else {
-            // And forward to success page
-            res.send({result: "success"});
-        }
+
     });
+
 });
 
 // route to authenticate a user

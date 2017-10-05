@@ -58,11 +58,16 @@ class Header extends React.Component {
 
     constructor(props){
         super(props);
+        this.state = {hide: false};
     }
 
 
     handleLogout(){
         this.props.handleLogout();
+    }
+
+    handleMenuIconClick(){
+        this.setState({hide:!this.state.hide});
     }
 
 
@@ -74,29 +79,32 @@ class Header extends React.Component {
 
                         <ul className="nav navbar-nav ">
                             <li>
-                                <Link className= "pull-xs-left" to="/">
+                                <Link className= "  header-title pull-xs-left" to="/">
                                     ADDRESS BOOK
                                 </Link>
+                                <i onClick = {this.handleMenuIconClick.bind(this)} className=" menu-icon fa fa-bars " aria-hidden="true"></i>
                             </li>
                         </ul>
+                        <div className ={this.state.hide?"hide-menu":""}>
 
-                        {
-                            !this.props.currentUser._id?
-                            <LoggedOutView
-                                currentUser={this.props.currentUser}
-                                appName ={this.props.appName}
+                            {
+                                !this.props.currentUser._id?
+                                <LoggedOutView
+                                    currentUser={this.props.currentUser}
+                                    appName ={this.props.appName}
+                                    pathname={this.props.location?this.props.location.pathname:""}
+                                />:null
+                            }
+                            {
+                                this.props.currentUser._id?
+                                <LoggedInView
                                 pathname={this.props.location?this.props.location.pathname:""}
-                            />:null
-                        }
-                        {
-                            this.props.currentUser._id?
-                            <LoggedInView
-                            pathname={this.props.location?this.props.location.pathname:""}
-                            currentUser = {this.props.currentUser}
-                            handleLogout =  {this.handleLogout.bind(this)}
-                            appName = {this.props.appName}
-                            />: null
-                        }
+                                currentUser = {this.props.currentUser}
+                                handleLogout =  {this.handleLogout.bind(this)}
+                                appName = {this.props.appName}
+                                />: null
+                            }
+                        </div>
 
                     </div>
                 </nav>

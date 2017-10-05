@@ -58,6 +58,7 @@ const UserDataReducer = (state = { user:{}, login:{errorMessage:""}}, action = {
     }
 
      function registerFailed(state, action){
+        window.alert(action.data.message);
         return {...state};
     }
 
