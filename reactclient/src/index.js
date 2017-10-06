@@ -17,18 +17,13 @@ const app = document.getElementById("root");
 
 ReactDOM.render(
 		<Provider store={store}>
-	        <Router  history={history} >
-	            <div>
-	            <Switch>
-	            <Route   path="/home" component={AppContainer}/>
-	            <Route   path="/signin" component={AppContainer}/>
-	            <Route   path="/signup" component={AppContainer}/>
-	            <Route   path="/addcontact" component={AppContainer}/>
-	            <Route   path="/editcontact/:id" component={AppContainer}/>
-	            <Route   path="/contact/:id" component={AppContainer}/>
-	            <Route component={() => <AppContainer/>}/>
-	            </Switch>
-	            </div>
+
+	        <Router  history={history}  >
+                <Switch>
+                <Route path ="/editcontact/:id"  component = {AppContainer}/>
+                <Route path ="/contact/:id"  component = {AppContainer}/>
+                <Route  component = {AppContainer}/>
+                </Switch>
 	        </Router>
         </Provider>, app);
 registerServiceWorker();
